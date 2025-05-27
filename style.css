@@ -1,0 +1,178 @@
+/* Unique Japanese-inspired color palette */
+:root {
+    --washi: #F8F4E9;      /* Handmade paper color */
+    --sumi: #252525;       /* Ink black */
+    --enko: #C82506;       /* Vermilion seal red */
+    --kiguchi: #D4A762;    /* Wooden frame gold */
+    --rokusho: #4A593D;    /* Patina green */
+    --ai-iro: #2A4073;     /* Indigo blue */
+}
+
+/* Unconventional scroll-inspired layout */
+body {
+    font-family: 'Sawarabi Mincho', 'Hiragino Mincho Pro', serif;
+    background: url('images/washi-texture.jpg') repeat;
+    color: var(--sumi);
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Asymmetrical header */
+.header-container {
+    background: url('images/bamboo-bg.png') right bottom no-repeat;
+    background-size: 30% auto;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--kiguchi);
+}
+
+h1.site-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    float: right;
+    margin-right: 2rem;
+    padding: 1rem 0;
+    border-right: 3px solid var(--enko);
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+}
+
+/* Diagonal navigation */
+nav {
+    transform: rotate(-5deg);
+    margin: 3rem 0 3rem -2rem;
+    background-color: var(--washi);
+    padding: 1rem 2rem;
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+    width: fit-content;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--ai-iro);
+    text-decoration: none;
+    font-weight: normal;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--enko);
+    transition: width 0.3s;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+/* Scroll-inspired content layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.art-display {
+    position: relative;
+    margin-top: 3rem;
+}
+
+.art-display:before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: 1rem;
+    bottom: 1rem;
+    border: 1px solid var(--kiguchi);
+    z-index: -1;
+}
+
+.art-display img {
+    width: 100%;
+    border: 1px solid var(--sumi);
+    box-shadow: none;
+    transition: transform 0.3s;
+}
+
+.art-display img:hover {
+    transform: translate(-5px, -5px);
+}
+
+/* Seal/stamp effect */
+.art-caption {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.art-caption:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url('images/seal-red.png') center/contain no-repeat;
+}
+
+/* Vertical text elements */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 1rem 0;
+    margin: 0 2rem;
+    border-top: 1px solid var(--kiguchi);
+    border-bottom: 1px solid var(--kiguchi);
+}
+
+/* Footer with hanging scroll effect */
+footer {
+    background: url('images/hanging-scroll.png') center top no-repeat;
+    background-size: contain;
+    padding-top: 8rem;
+    text-align: center;
+    margin-top: auto;
+    color: var(--sumi);
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    h1.site-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        float: none;
+        margin-right: 0;
+        border-right: none;
+        border-bottom: 3px solid var(--enko);
+    }
+    
+    nav {
+        transform: none;
+        margin: 1rem 0;
+        width: auto;
+    }
+}
