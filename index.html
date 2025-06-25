@@ -3,54 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kobijutsu - Ancient Japanese Art</title>
+    <title>Ancient Art Collective</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header-container">
-        <h1 class="site-title">Ancient Art</h1>
+    <header>
+        <h1><br>Ancient Art Collective</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Scrolls</a></li>
-                <li><a href="triptych.html">Triptychs</a></li>
-                <li><a href="poster.html">Warrior Prints</a></li>
-            </ul>
+            <a href="index.html" class="active">Home</a>
+            <a href="triptych.html">Triptychs</a>
+            <a href="poster.html">Warrior Prints</a>
         </nav>
     </header>
 
-    <main class="main-content">
-        <aside>
-            <div class="vertical-text">
-                <p>Exploring Japanese Art Traditions</p>
+    <main>
+        <section class="intro">
+            <img src="images/F9BRmieN.jpeg" alt="Japanese art display" class="art-image" data-full="images/F9BRmieN-full.jpg">
+            <div class="intro-text">
+                <h2>World of Ink and Gold</h2>
+                <p>Exploring traditional Japanese art forms through modern digital mediums</p>
             </div>
-        </aside>
+        </section>
 
-        <article>
-            <section class="art-display">
-                <img src="images/F9BRmieN.jpeg" alt="Japanese art display">
-                <div class="art-caption">
-                    <h2>World of Ink and Gold</h2>
-                    <p>The unique aesthetic found in Edo period ukiyo-e prints</p>
+        <section class="team">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="member">
+                    <h3>Thabo Molefe</h3>
+                    <p>Web Developer</p>
                 </div>
-            </section>
-
-            <section>
-                <h2>Preserving Tradition</h2>
-                <p>Japanese art has a history spanning over a thousand years, reflecting the spirituality of each era. This site focuses particularly on art forms cherished by the samurai class.</p>
-                
-                <h3>Distinctive Styles</h3>
-                <ul>
-                    <li>Aesthetics of empty space - The importance of what's not drawn</li>
-                    <li>Seasonal transitions - Harmony with nature</li>
-                    <li>Line expression - Conveying emotion through brush strokes</li>
-                </ul>
-            </section>
-        </article>
+                <div class="member">
+                    <h3>Koketso</h3>
+                    <p>Animator</p>
+                </div>
+                <div class="member">
+                    <h3>Lethabo</h3>
+                    <p>Graphic Designer</p>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Image Viewer Modal -->
+    <div id="imageViewer" class="image-viewer">
+        <span class="close-btn">&times;</span>
+        <img class="viewer-content" id="expandedImage">
+        <div class="image-caption" id="imageCaption"></div>
+    </div>
+
     <footer>
-        <p>© 2025 Thabo Molefe | Tradition to the Future</p>
+        <p>© 2025 Ancient Art Collective</p>
     </footer>
+
+    <script src="js/viewer.js"></script>
 </body>
 </html>

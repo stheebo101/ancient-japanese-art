@@ -1,178 +1,236 @@
-/* Unique Japanese-inspired color palette */
+/* Japanese-inspired color palette */
 :root {
     --washi: #F8F4E9;      /* Handmade paper color */
     --sumi: #252525;       /* Ink black */
     --enko: #C82506;       /* Vermilion seal red */
     --kiguchi: #D4A762;    /* Wooden frame gold */
-    --rokusho: #4A593D;    /* Patina green */
-    --ai-iro: #2A4073;     /* Indigo blue */
 }
 
-/* Unconventional scroll-inspired layout */
+/* Base styles */
 body {
-    font-family: 'Sawarabi Mincho', 'Hiragino Mincho Pro', serif;
-    background: url('images/washi-texture.jpg') repeat;
+    font-family: 'Sawarabi Mincho', serif;
+    background-color: var(--washi);
     color: var(--sumi);
     margin: 0;
     padding: 0;
-    line-height: 1.8;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* Asymmetrical header */
-.header-container {
-    background: url('images/bamboo-bg.png') right bottom no-repeat;
-    background-size: 30% auto;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--kiguchi);
-}
-
-h1.site-title {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    float: right;
-    margin-right: 2rem;
-    padding: 1rem 0;
-    border-right: 3px solid var(--enko);
-    font-size: 2.5rem;
-    letter-spacing: 0.5rem;
-}
-
-/* Diagonal navigation */
-nav {
-    transform: rotate(-5deg);
-    margin: 3rem 0 3rem -2rem;
-    background-color: var(--washi);
+/* Header styles */
+header {
+    background: var(--washi);
     padding: 1rem 2rem;
-    box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
-    width: fit-content;
+    border-bottom: 1px solid var(--kiguchi);
+    text-align: center;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 2rem;
+h1 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Navigation */
+nav {
+    margin: 1rem 0;
 }
 
 nav a {
-    color: var(--ai-iro);
+    color: var(--sumi);
     text-decoration: none;
-    font-weight: normal;
+    margin: 0 1rem;
+    padding: 0.3rem 0;
     position: relative;
-    padding-bottom: 0.3rem;
 }
 
-nav a:after {
+nav a.active {
+    color: var(--enko);
+}
+
+nav a.active:after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
-    height: 1px;
+    width: 100%;
+    height: 2px;
     background: var(--enko);
-    transition: width 0.3s;
 }
 
-nav a:hover:after {
-    width: 100%;
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Scroll-inspired content layout */
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    padding: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+/* Home page styles */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
 }
 
-.art-display {
-    position: relative;
-    margin-top: 3rem;
-}
-
-.art-display:before {
-    content: '';
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    right: 1rem;
-    bottom: 1rem;
-    border: 1px solid var(--kiguchi);
-    z-index: -1;
-}
-
-.art-display img {
-    width: 100%;
+.intro img {
+    max-width: 100%;
     border: 1px solid var(--sumi);
-    box-shadow: none;
-    transition: transform 0.3s;
 }
 
-.art-display img:hover {
-    transform: translate(-5px, -5px);
+.intro-text {
+    text-align: center;
+    margin-top: 1rem;
 }
 
-/* Seal/stamp effect */
-.art-caption {
-    position: relative;
-    padding-left: 2rem;
+.team {
+    text-align: center;
 }
 
-.art-caption:before {
-    content: '';
-    position: absolute;
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.member {
+    border: 1px solid var(--kiguchi);
+    padding: 1rem 2rem;
+    min-width: 200px;
+}
+
+/* Triptych page styles */
+.triptych-container {
+    display: flex;
+    flex-wrap: linear;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.triptych-panel {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    border: 0px solid var(--sumi);
+    padding: 0rem;
+    
+}
+
+.triptych-panel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--sumi);
+}
+
+.panel-info {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Warrior print page styles */
+.warrior-print {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.warrior-print img {
+    max-width: 100%;
+    border: 1px solid var(--sumi);
+}
+
+.print-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--kiguchi);
+    margin-top: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .triptych-panel {
+        min-width: 100%;
+    }
+
+    /* Image Viewer Styles */
+.image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: url('images/seal-red.png') center/contain no-repeat;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+    animation: fadeIn 0.3s;
 }
 
-/* Vertical text elements */
-.vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    padding: 1rem 0;
-    margin: 0 2rem;
-    border-top: 1px solid var(--kiguchi);
-    border-bottom: 1px solid var(--kiguchi);
+.viewer-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--kiguchi);
 }
 
-/* Footer with hanging scroll effect */
-footer {
-    background: url('images/hanging-scroll.png') center top no-repeat;
-    background-size: contain;
-    padding-top: 8rem;
+.image-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
     text-align: center;
-    margin-top: auto;
-    color: var(--sumi);
-    font-size: 0.9rem;
+    color: var(--washi);
+    padding: 10px 0;
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .main-content {
-        grid-template-columns: 1fr;
-    }
-    
-    h1.site-title {
-        writing-mode: horizontal-tb;
-        transform: none;
-        float: none;
-        margin-right: 0;
-        border-right: none;
-        border-bottom: 3px solid var(--enko);
-    }
-    
-    nav {
-        transform: none;
-        margin: 1rem 0;
-        width: auto;
-    }
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--washi);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--kiguchi);
+}
+
+.art-image {
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid var(--sumi);
+}
+
+.art-image:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 }
