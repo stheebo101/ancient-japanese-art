@@ -1,61 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japanese Triptychs</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Triptych | Ancient Art Collective</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1><br>Triptych</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="triptych.html" class="active">Triptych</a>
-            <a href="poster.html">Warrior Prints</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Triptych</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="triptych.html" class="active">Triptych</a>
+      <a href="poster.html">Warrior Prints</a>
+    </nav>
+  </header>
 
-    <main>
-        <div class="triptych-container">
-            <div class="triptych-panel">
-                <img src="images/Screenshot 2025-06-03 151120.png" alt="Morning in Edo" class="clickable-image">
-                <div class="panel-info">
-                    <h3>Morning in Edo</h3>
-                    <p>Utagawa Hiroshige, 1832</p>
-                </div>
-            </div>
-            
-            <div class="triptych-panel">
-                <img src="images/Screenshot 2025-06-03 151129.png" alt="Midday Market" class="clickable-image">
-                <div class="panel-info">
-                    <h3>Midday Market</h3>
-                    <p>Utagawa Hiroshige, 1832</p>
-                </div>
-            </div>
-            
-            <div class="triptych-panel">
-                <img src="images/Screenshot 2025-06-03 151142.png" alt="Evening Lights" class="clickable-image">
-                <div class="panel-info">
-                    <h3>Evening Lights</h3>
-                    <p>Utagawa Hiroshige, 1832</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Image Modal -->
-    <div class="modal" id="imageModal">
-        <span class="close-btn">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div class="caption" id="caption"></div>
+  <main>
+    <div class="triptych-container">
+      <div class="triptych-panel">
+        <img src="images/Screenshot 2025-06-03 151120.png" alt="Morning in Edo" class="clickable-image" data-full="images/Screenshot 2025-06-03 151120.png" />
+      </div>
+      <div class="triptych-panel">
+        <img src="images/Screenshot 2025-06-03 151129.png" alt="Midday Market" class="clickable-image" data-full="images/Screenshot 2025-06-03 151129.png" />
+      </div>
+      <div class="triptych-panel">
+        <img src="images/Screenshot 2025-06-03 151142.png" alt="Evening Lights" class="clickable-image" data-full="images/Screenshot 2025-06-03 151142.png" />
+      </div>
     </div>
+  </main>
 
-    <footer>
-        <p>© 2025 Ancient Art Collective</p>
-    </footer>
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="modalImage" />
+    <div class="caption" id="caption"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>© 2025 Thabo Molefe</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,236 +1,184 @@
-/* Japanese-inspired color palette */
 :root {
-    --washi: #F8F4E9;      /* Handmade paper color */
-    --sumi: #252525;       /* Ink black */
-    --enko: #C82506;       /* Vermilion seal red */
-    --kiguchi: #D4A762;    /* Wooden frame gold */
+  --washi: #F8F4E9;
+  --sumi: #252525;
+  --enko: #C82506;
+  --kiguchi: #D4A762;
 }
 
-/* Base styles */
 body {
-    font-family: 'Sawarabi Mincho', serif;
-    background-color: var(--washi);
-    color: var(--sumi);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: 'Noto Serif JP', serif;
+  background-color: var(--washi);
+  color: var(--sumi);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/* Header styles */
 header {
-    background: var(--washi);
-    padding: 1rem 2rem;
-    border-bottom: 1px solid var(--kiguchi);
-    text-align: center;
+  background: var(--washi);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--kiguchi);
+  text-align: center;
 }
 
 h1 {
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    margin: 0.5rem 0;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  margin: 0.5rem 0;
 }
 
-/* Navigation */
 nav {
-    margin: 1rem 0;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 nav a {
-    color: var(--sumi);
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.3rem 0;
-    position: relative;
+  color: var(--sumi);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  position: relative;
 }
 
 nav a.active {
-    color: var(--enko);
+  color: var(--enko);
 }
 
-nav a.active:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--enko);
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--enko);
 }
 
-/* Main content */
 main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* Home page styles */
-.intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.intro img {
-    max-width: 100%;
-    border: 1px solid var(--sumi);
-}
-
-.intro-text {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.team {
-    text-align: center;
-}
-
-.team-members {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.member {
-    border: 1px solid var(--kiguchi);
-    padding: 1rem 2rem;
-    min-width: 200px;
-}
-
-/* Triptych page styles */
 .triptych-container {
-    display: flex;
-    flex-wrap: linear;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 2rem auto;
+  padding: 0;
 }
 
 .triptych-panel {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    border: 0px solid var(--sumi);
-    padding: 0rem;
-    
+  flex: 1;
+  min-width: 30%;
+  max-width: 500px;
+  height: 600px;
+  overflow: hidden;
 }
 
 .triptych-panel img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid var(--sumi);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
-.panel-info {
-    margin-top: 1rem;
-    text-align: center;
+.triptych-panel img:hover {
+  transform: scale(1.02);
 }
 
-/* Warrior print page styles */
-.warrior-print {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* NEW: clickable image class */
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.warrior-print img {
-    max-width: 100%;
-    border: 1px solid var(--sumi);
+.clickable-image:hover {
+  transform: scale(1.02);
 }
 
-.print-info {
-    text-align: center;
-    margin-top: 1rem;
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  overflow: auto;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    border-top: 1px solid var(--kiguchi);
-    margin-top: 2rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .team-members {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .triptych-panel {
-        min-width: 100%;
-    }
-
-    /* Image Viewer Styles */
-.image-viewer {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow: auto;
-    animation: fadeIn 0.3s;
-}
-
-.viewer-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid var(--kiguchi);
-}
-
-.image-caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    text-align: center;
-    color: var(--washi);
-    padding: 10px 0;
-    position: absolute;
-    bottom: 20px;
-    left: 10%;
+.modal-content {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: var(--washi);
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.close-btn:hover {
-    color: var(--kiguchi);
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.art-image {
-    cursor: pointer;
-    transition: 0.3s;
-    border: 1px solid var(--sumi);
+.member {
+  border: 1px solid var(--kiguchi);
+  padding: 1.5rem;
+  min-width: 200px;
+  text-align: center;
 }
 
-.art-image:hover {
-    opacity: 0.8;
-    transform: scale(1.02);
+.warrior-print {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.warrior-print img {
+  max-width: 100%;
 }
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--kiguchi);
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .triptych-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .triptych-panel {
+    width: 100%;
+    height: 400px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
